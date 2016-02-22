@@ -1,6 +1,6 @@
 /**
  * @author Douglas Porter
- * @version 2.0, 2/22/2016
+ * @version 3.0, 2/22/2016
  * @description Test cases for the Calculator.java class
  */
 
@@ -24,6 +24,7 @@ public class calculatorTest {
 	public void testGetTotal()
 	{
 		Calculator test2 = new Calculator();
+		
 		int testValue = test2.getTotal();
 		
 		assertEquals(0, testValue);
@@ -34,6 +35,7 @@ public class calculatorTest {
 	{
 		Calculator test3 = new Calculator();
 		test3.add(3);
+		
 		int testValue = test3.getTotal();
 		
 		assertEquals(3, testValue);
@@ -44,6 +46,7 @@ public class calculatorTest {
 	{
 		Calculator test4 = new Calculator();
 		test4.subtract(3);
+		
 		int testValue = test4.getTotal();
 		
 		assertEquals(-3, testValue);
@@ -55,6 +58,7 @@ public class calculatorTest {
 		Calculator test5 = new Calculator();
 		test5.add(3);
 		test5.multiply(2);
+		
 		int testValue = test5.getTotal();
 		
 		assertEquals(6, testValue);
@@ -66,6 +70,7 @@ public class calculatorTest {
 		Calculator test6 = new Calculator();
 		test6.add(9);
 		test6.divide(3);
+		
 		int testValue = test6.getTotal();
 		
 		assertEquals(3, testValue);
@@ -77,6 +82,7 @@ public class calculatorTest {
 		Calculator test6 = new Calculator();
 		test6.add(9);
 		test6.divide(0);
+		
 		int testValue = test6.getTotal();
 		
 		assertEquals(0, testValue);
@@ -85,6 +91,13 @@ public class calculatorTest {
 	@Test
 	public void testGetHistory()
 	{
-		fail("Not yet implemented");
+		Calculator test7 = new Calculator();
+		test7.add(4);
+		test7.divide(2);
+		test7.subtract(1);
+		
+		String testString = test7.getHistory();
+		
+		assertEquals("0 + 4 / 2 - 1", testString);
 	}
 }

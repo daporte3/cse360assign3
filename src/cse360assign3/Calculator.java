@@ -1,6 +1,6 @@
 /**
  * @author Douglas Porter
- * @version 2.0, 2/22/2016
+ * @version 3.0, 2/22/2016
  * @description The calculator class, performs basic calculator operations on numbers
  */
 
@@ -9,12 +9,15 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	private String history;
 	
 	/**
 	 * @category constructor
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		
+		history = "0";
 	}
 	
 	/**
@@ -31,6 +34,10 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total = total + value;
+		
+		String valString = Integer.toString(value);
+		history = history + " + ";
+		history = history + valString;
 	}
 	
 	/**
@@ -39,6 +46,10 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total = total - value;
+		
+		String valString = Integer.toString(value);
+		history = history + " - ";
+		history = history + valString;
 	}
 	
 	/**
@@ -47,6 +58,10 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total = total * value;
+		
+		String valString = Integer.toString(value);
+		history = history + " * ";
+		history = history + valString;
 	}
 	
 	/**
@@ -57,10 +72,16 @@ public class Calculator {
 		if(value == 0)
 		{
 			total = 0;
+			
+			history = history + " / 0 ";
 		}
 		else
 		{
 			total = total / value;
+			
+			String valString = Integer.toString(value);
+			history = history + " / ";
+			history = history + valString;
 		}
 	}
 	
@@ -69,6 +90,6 @@ public class Calculator {
 	 * @return history
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
